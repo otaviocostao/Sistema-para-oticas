@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+}
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+}
+
+.nav-bar{
+    width: 100%;
+    height: 10%;
+    background: orange;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.322);
+}
+
+.nav-bar > h1{
+    color: white;
+    margin: 20px;
+}
+
+.painel{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-painel{
+    width: 250px;
+    height: 200px;
+    margin: 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.322);
+    background: orange;
+    color: white;
+    font-size: 15pt;
+    cursor: pointer;
+}
