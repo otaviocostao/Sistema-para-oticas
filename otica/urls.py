@@ -4,6 +4,7 @@ from django.urls import path
 app_name = 'otica'
 
 urlpatterns = [
-    path('', views.pag_inicial, name='pag_inicial')
+    path('inicio', views.pag_inicial, name='pag_inicial'),
+    path('cadastro', views.cadastro_cliente, name='cadastro_cliente'),
 ]
 
