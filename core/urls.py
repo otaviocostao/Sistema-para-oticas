@@ -18,8 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
+# Para adicionar arquivos estaticos durante o desenvolvimento:
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('otica.urls', namespace='otica'))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
