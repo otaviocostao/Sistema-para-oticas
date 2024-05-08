@@ -23,6 +23,10 @@ class Cliente(models.Model):
         verbose_name="CPF", max_length=14
     )
 
-    data_nasc = models.DateField()
     
+    data_nasc = models.DateField()
+
+    def __str__(self):
+        return self.nome
+
     objetos = models.Manager()

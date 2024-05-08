@@ -1,3 +1,4 @@
+from django.views.generic import ListView, CreateView
 from django.shortcuts import render
 from core.models import Cliente
 
@@ -9,9 +10,16 @@ def pag_inicial(request):
 
     return render(request, "otica/home.html")
 
-def cadastro_cliente(request):
+class ClienteListView(ListView):
+    template_name= "otica/cliente.html"
     model = Cliente
-    return render(request, "otica/cadastro_cliente.html")
+    context_object_name = "clientes"
+
+class ClienteCreateView(CreateView):
+    template_name= "otica/cadastra_cliente.html"
+    model = Cliente
+    fields = ["nome", "telefone", "endereco", "email", "cpf", "data_nasc"]
+
 
 def ver_receituario(request):
 

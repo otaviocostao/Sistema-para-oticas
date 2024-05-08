@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cad_cliente.css' %}">
+    <title>Cadastro de cliente</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="nav-bar">
+            <h1>Clientes</h1>
+        </div>
+        
+        <div class="painel">
+            <div id="card-cadastro">
+                    <form action="post">
+                        {% csrf_token %}
+
+                        <div class="textfield">
+                            <label for="{{ form.nome.id_for_label}}">Nome: </label>
+                            {{ form.nome }}
+                        </div>
+
+                        <div class="textfield">
+                            <label for="{{ form.telefone.id_for_label}}">Telefone: </label>
+                            {{ form.telefone }}
+                        </div>
+                        
+                        <div class="textfield">
+                            <label for="{{ form.endereco.id_for_label }}">Endereço: </label>
+                            {{ form.endereco }}
+                        </div>
+                        
+                        <div class="textfield">
+                            <label for="buscar">Email: </label>
+                            <input type="text" name="email" id="">
+                        </div>
+                        
+                        <div class="textfield">
+                            <label for="buscar">CPF: </label>
+                            <input type="text" name="buscar" id="">
+                        </div>
+                        
+                        <div class="textfield">
+                            <label for="buscar">Data de Nascimento: </label>
+                            <input type="text" name="data_nasc" id="">
+                        </div>
+                    </form>
+                
+                
+                
+                <div id="field-botao">
+                    <button>Cadastrar cliente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

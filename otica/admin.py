@@ -4,4 +4,7 @@ from django.contrib import admin
 
 from core.models import Cliente
 
-admin.site.register(Cliente)
+class ClienteAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'telefone', 'endereco', 'data_nasc')
+
+admin.site.register(Cliente, ClienteAdmin)
